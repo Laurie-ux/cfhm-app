@@ -1,0 +1,179 @@
+:root{--bg:#f6f7fb;--card:#ffffff;--accent:#1e88e5;--muted:#475569;--glass:rgba(0,0,0,0.06);--soft:#f1f7ff}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+body{margin:0;background:linear-gradient(180deg,#fff,#f6f7fb);color:#111}
+.site-header{background:linear-gradient(90deg,var(--accent),#1976d2);color:#fff;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;position:relative}
+.site-header .tag{opacity:.95;margin:0;font-size:.95rem}
+.site-title{display:flex;flex-direction:column}
+.site-logo{width:72px;height:72px;object-fit:contain;border-radius:8px;background:#fff;padding:4px}
+
+/* Hamburger menu */
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;padding:.3rem;line-height:1}
+@media(max-width:768px){.menu-toggle{display:block}}
+@media(max-width:600px){.site-header{padding:.75rem}.site-logo{width:54px;height:54px}}
+
+.site-info{margin-top:6px;font-size:0.93rem;color:#eaf5ff}
+.site-info .founder{font-weight:600;color:#fff}
+.site-info .location{font-size:0.85rem;color:#dbeeff;margin-top:2px}
+
+
+/* Login page background using the provided logo */
+body.login-page{background-color:var(--bg);background-image:url('logo.png');background-repeat:no-repeat;background-position:center;background-size:contain;background-attachment:fixed}
+body.login-page::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:inherit;filter:blur(12px);z-index:-1}
+body.login-page .panel{max-width:520px;margin:4rem auto 2rem;box-shadow:0 14px 40px rgba(0,0,0,0.15);position:relative;z-index:1;background:rgba(255,255,255,0.98)}
+
+/* Hero person image on index page (top-right) */
+#hero-person{position:absolute;right:18px;top:6px;width:120px;height:auto;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+@media(max-width:900px){#hero-person{display:none}}
+
+/* Profile button & modal */
+.profile-btn{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border:none;background:var(--accent);color:#fff;border-radius:50%;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 12px rgba(30,136,229,0.3);transition:transform .15s,box-shadow .15s}
+.profile-btn:hover{transform:scale(1.08);box-shadow:0 6px 16px rgba(30,136,229,0.4)}
+.profile-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center}
+.profile-modal.show{display:flex;animation:slideIn .3s ease}
+@keyframes slideIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+.profile-card-small{background:#fff;border-radius:12px;padding:1.2rem;max-width:280px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
+.close-profile{position:absolute;top:8px;right:8px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999}
+.profile-image-small{width:120px;height:150px;object-fit:cover;border-radius:8px;margin:0 auto .8rem;display:block;box-shadow:0 6px 12px rgba(0,0,0,0.15)}
+.profile-name-small{margin:.6rem 0 .2rem;font-size:1.1rem;color:#111;font-weight:700}
+.profile-role-small{margin:0 0 .6rem;color:var(--accent);font-weight:600;font-size:.85rem}
+.profile-location-small{margin:.6rem 0;padding:.7rem;background:#f6f7fb;border-radius:8px;font-size:.8rem;color:#475569;line-height:1.5;border-left:3px solid var(--accent)}
+
+/* Activity modal */
+.activity-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:998;align-items:center;justify-content:center;padding:1rem}
+.activity-modal.show{display:flex;animation:slideIn .3s ease}
+.activity-card{background:#fff;border-radius:12px;padding:2rem;max-width:500px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;max-height:90vh;overflow-y:auto}
+.close-activity{position:absolute;top:12px;right:12px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#999}
+.activity-card h2{margin-top:0;color:#111}
+.activity-card label{display:block;margin-bottom:.5rem}
+.activity-card input,.activity-card textarea,.activity-card select{width:100%;padding:.5rem;border:1px solid #e6e9ef;border-radius:6px;margin-top:.25rem;font-family:inherit;font-size:.95rem}
+.activity-card .form-actions{display:flex;gap:.5rem;margin-top:.75rem}
+
+.list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.list-header button{padding:.45rem .75rem;font-weight:500}
+
+/* Prophet profile section */
+.prophet-profile{display:flex;flex-direction:column;align-items:center;text-align:center;padding:.3rem}
+.prophet-image{width:180px;height:220px;object-fit:cover;border-radius:10px;margin-bottom:1rem;box-shadow:0 8px 20px rgba(30,136,229,0.12);border:2px solid var(--accent)}
+.prophet-name{margin:.7rem 0 .2rem;font-size:1.3rem;color:#111;font-weight:700}
+.prophet-role{margin:0 0 .8rem;color:var(--accent);font-weight:600;font-size:.9rem}
+.prophet-contact{margin:.8rem 0;padding:.8rem;background:linear-gradient(135deg,#f0f9ff,#e0efff);border-radius:8px;font-size:.85rem;color:#475569;line-height:1.5;border-left:3px solid var(--accent)}
+.prophet-contact a{color:var(--accent);text-decoration:none;font-weight:600}
+.prophet-contact a:hover{text-decoration:underline}
+.prophet-location{margin:.8rem 0;padding:.8rem;background:linear-gradient(135deg,#f6f7fb,#eef4ff);border-radius:8px;font-size:.85rem;color:#475569;line-height:1.5;border-left:3px solid var(--accent)}
+
+/* Compact schedule card under prophet profile */
+.schedule-card{margin-top:0.6rem;width:100%;background:linear-gradient(180deg,#fff,#f8fbff);border-radius:8px;padding:.6rem}
+.schedule-title{margin:0 0 .25rem;font-size:.95rem;color:var(--muted);font-weight:700;text-align:left;padding-left:.25rem}
+.service{display:flex;align-items:center;justify-content:space-between;padding:.45rem;border-radius:6px;margin-top:.45rem;color:#fff}
+.service .svc-time{font-weight:700;font-size:.85rem}
+.service .svc-name{font-size:.85rem;opacity:0.95}
+.service.sunday{background:linear-gradient(90deg,var(--accent),#1976d2)}
+.service.tuesday{background:linear-gradient(90deg,#e53935,#d32f2f)}
+
+/* Last Friday (all-night) - purple */
+.service.friday{background:linear-gradient(90deg,#8e24aa,#7b1fa2)}
+.service.friday .svc-time{font-weight:700}
+
+/* Slightly reduce spacing for compact card */
+.schedule-card{padding:.45rem}
+.service{padding:.4rem;border-radius:6px}
+
+.container{max-width:980px;margin:1.25rem auto;display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:0 1rem}
+.panel{background:var(--card);border-radius:8px;padding:1rem;box-shadow:0 6px 18px var(--glass)}
+.form-panel label{display:block;margin-bottom:.5rem;font-size:.95rem}
+.form-panel input[type=text],.form-panel input[type=datetime-local],.form-panel textarea,.form-panel select{width:100%;padding:.5rem;border:1px solid #e6e9ef;border-radius:6px;margin-top:.35rem}
+.form-actions{display:flex;gap:.5rem;margin-top:.5rem}
+#tabs{display:flex;gap:.25rem;margin-bottom:.6rem}
+.tab-btn{background:transparent;border:1px solid transparent;padding:.45rem .6rem;border-radius:6px;cursor:pointer}
+.tab-btn.active{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.06)}
+.primary{background:var(--accent);color:#fff;border:none;padding:.5rem .75rem;border-radius:6px;cursor:pointer;box-shadow:0 4px 10px rgba(30,136,229,0.12)}
+.primary:hover{opacity:.98}
+#reset-btn{background:#eef2f3;border:1px solid #e6e9ef;padding:.45rem .75rem;border-radius:6px}
+.toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem}
+.toolbar input[type=text],.toolbar select{padding:.45rem;border-radius:6px;border:1px solid #e6e9ef}
+.activities{list-style:none;padding:0;margin:0}
+.activity{display:flex;align-items:flex-start;justify-content:space-between;padding:.6rem;border-bottom:1px solid #eef4ff;background:linear-gradient(180deg,transparent,var(--soft))}
+.activity:hover{background:linear-gradient(180deg,#fff,#f7fbff)}
+.meta{font-size:.85rem;color:var(--muted)}
+.actions button{margin-left:.35rem;padding:.35rem .5rem;border-radius:6px;border:1px solid #e6e9ef;background:#fff;cursor:pointer}
+.completed .title{text-decoration:line-through;color:var(--muted)}
+.site-footer{text-align:center;color:var(--muted);padding:1rem;font-size:.9rem}
+
+/* User list */
+.user-list{list-style:none;padding:0;margin:0}
+.user-item{display:flex;align-items:center;justify-content:space-between;padding:.5rem;border-bottom:1px solid #eef4ff}
+.user-meta{font-size:.9rem;color:var(--muted)}
+
+@media(max-width:900px){.container{grid-template-columns:1fr}}
+
+/* Auth / login styles */
+.auth-container{display:flex;flex-direction:column;gap:.5rem}
+.auth-switch{display:flex;gap:.4rem;margin-bottom:.6rem}
+.auth-container label{display:block}
+.auth-container input{width:100%;padding:.5rem;border:1px solid #e6e9ef;border-radius:6px;margin-top:.25rem}
+.auth-container .meta{color:var(--muted)}
+
+/* nicer auth card */
+.panel{transition:box-shadow .18s ease,transform .12s ease}
+.panel:hover{box-shadow:0 10px 30px rgba(30,136,229,0.08);transform:translateY(-2px)}
+.auth-container .primary{padding:.6rem .9rem;font-weight:600}
+.auth-switch .tab-btn{background:transparent;border:1px solid rgba(30,136,229,0.12);color:var(--accent);padding:.45rem .7rem;border-radius:8px}
+.auth-switch .tab-btn.active{background:var(--accent);color:#fff;border-color:transparent}
+.auth-container input::placeholder{color:#9aa6c0}
+
+/* Prophet profile section */
+.prophet-profile{display:flex;flex-direction:column;align-items:center;text-align:center;padding:.2rem}
+.prophet-image{width:140px;height:170px;object-fit:cover;border-radius:8px;margin-bottom:.7rem;box-shadow:0 6px 16px rgba(30,136,229,0.1);border:2px solid var(--accent)}
+.prophet-clickable{cursor:pointer;transition:transform .2s,box-shadow .2s}
+.prophet-clickable:hover{transform:scale(1.04);box-shadow:0 10px 22px rgba(30,136,229,0.2)}
+.prophet-name{margin:.5rem 0 .15rem;font-size:1.1rem;color:#111;font-weight:700}
+.prophet-role{margin:0 0 .6rem;color:var(--accent);font-weight:600;font-size:.8rem}
+.prophet-contact{margin:.6rem 0;padding:.6rem;background:linear-gradient(135deg,#f0f9ff,#e0efff);border-radius:6px;font-size:.8rem;color:#475569;line-height:1.4;border-left:2px solid var(--accent)}
+.prophet-contact a{color:var(--accent);text-decoration:none;font-weight:600;font-size:.78rem}
+.prophet-contact a:hover{text-decoration:underline}
+.prophet-location{margin:.6rem 0;padding:.6rem;background:linear-gradient(135deg,#f6f7fb,#eef4ff);border-radius:6px;font-size:.8rem;color:#475569;line-height:1.4;border-left:2px solid var(--accent)}
+
+/* Facebook-style profile modal */
+.profile-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;padding:1rem}
+.profile-modal.show{display:flex;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.profile-card{background:#fff;border-radius:16px;overflow:hidden;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.4);position:relative}
+.profile-card-header{background:linear-gradient(135deg,var(--accent),#1976d2);height:120px;position:relative}
+.close-profile{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.2);border:none;width:36px;height:36px;border-radius:50%;font-size:1.4rem;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2}
+.close-profile:hover{background:rgba(255,255,255,0.3)}
+.profile-image{width:140px;height:170px;object-fit:cover;border-radius:12px;margin:0 auto -50px;display:block;box-shadow:0 8px 24px rgba(0,0,0,0.2);border:4px solid #fff;position:relative;z-index:1}
+.profile-content{padding:2.5rem 1.5rem 1.5rem;text-align:center}
+.profile-name{margin:.5rem 0 .2rem;font-size:1.5rem;color:#111;font-weight:700}
+.profile-role{margin:0 0 .8rem;color:var(--accent);font-weight:600}
+.profile-location{margin:1rem 0;padding:1rem;background:#f6f7fb;border-radius:8px;font-size:.9rem;color:#475569;line-height:1.6}
+.profile-location strong{color:#111}
+
+
+
+@media(max-width:900px){.container{grid-template-columns:1fr}}
+
+/* Modern typography & UI refinements */
+:root{--muted-2:#6b7280;--glass-2:rgba(0,0,0,0.04)}
+html,body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-feature-settings:"ss01" 1}
+.site-title h1{font-size:1.6rem;letter-spacing:0.4px;margin:0;font-weight:700;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial}
+.site-title .tag{font-size:0.95rem;opacity:0.95;color:rgba(255,255,255,0.95);letter-spacing:0.6px;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;font-weight:600}
+
+/* Buttons: modern pill style */
+.primary{border-radius:999px;padding:.45rem .85rem;box-shadow:0 6px 18px rgba(30,136,229,0.12);text-transform:none}
+.primary:hover{transform:translateY(-1px)}
+
+/* Schedule modern text */
+.schedule-title{font-size:0.82rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted-2);margin-bottom:.25rem}
+.service .svc-time{font-size:.8rem;opacity:0.95}
+.service .svc-name{font-size:.9rem;font-weight:600;opacity:0.98}
+
+/* Footer modern */
+.site-footer{font-size:.88rem;color:var(--muted-2);letter-spacing:0.2px}
+
+@media(max-width:600px){.profile-image-small{width:100px;height:120px}.profile-card-small{max-width:92%}.site-logo{width:50px;height:50px}}
+
+@media(max-width:600px){
+	.site-title h1{font-size:1.15rem}
+	.site-title .tag{font-size:0.78rem}
+}

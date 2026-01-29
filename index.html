@@ -1,0 +1,118 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Christ Fire Healing Ministry — Activities</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="site-header">
+		<button id="menu-toggle" class="menu-toggle" title="Menu">☰</button>
+		<img src="logo.png" class="site-logo" alt="Christ Fire Healing Ministry logo" onerror="if(!this._tried){this._tried=true;this.src='assets/logo.png'}else{this.src='logo.svg'}">
+		<div class="site-title">
+			<h1>Christ Fire Healing Ministry</h1>
+			<p class="tag">Events & Services</p>
+		</div>
+
+		<!-- Hero/person image top-right (place person.png in project root or assets/) -->
+			<img id="hero-person" src="person.png" alt="Pastor" onerror="if(!this._triedPerson){this._triedPerson=true;this.src='assets/person.png'}else{this.style.display='none'}">
+			<button id="profile-btn" class="profile-btn" title="Church Profile">📍</button>
+	</header>
+
+	<!-- Add Activity Modal -->
+	<div id="activity-modal" class="activity-modal">
+		<div class="activity-card">
+			<button id="close-activity" class="close-activity">✕</button>
+			<h2 id="form-title">Add Activity</h2>
+			<form id="activity-form">
+					<input type="hidden" id="activity-id">
+					<label>Title
+						<input id="title" required placeholder="e.g. Sunday Service" />
+					</label>
+					<label>Date & time
+						<input id="datetime" type="datetime-local" required />
+					</label>
+					<label>Type
+						<select id="type">
+							<option>Service</option>
+							<option>Prayer</option>
+							<option>Event</option>
+							<option>Meeting</option>
+							<option>Other</option>
+						</select>
+					</label>
+					<label>Description
+						<textarea id="description" rows="3" placeholder="Optional details"></textarea>
+					</label>
+					<div class="form-actions">
+						<button type="submit" class="primary">Save</button>
+						<button type="button" id="reset-btn">Reset</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	<main class="container">
+		<section class="panel form-panel">
+			<div id="prophet-profile" class="prophet-profile">
+				<img src="person.png" alt="Prophet Micheal Narh" class="prophet-image prophet-clickable" id="prophet-image-btn" onerror="if(!this._triedProph){this._triedProph=true;this.src='assets/person.png'}else{this.style.display='none'}">
+				<h2 class="prophet-name">Prophet Micheal Narh</h2>
+				<div class="schedule-card">
+					<h3 class="schedule-title">Weekly Schedule</h3>
+					<div class="service sunday">
+						<div class="svc-time">Sun • 9:00–12:30</div>
+						<div class="svc-name">Sunday</div>
+					</div>
+					<div class="service tuesday">
+						<div class="svc-time">Tue • 10:00–14:00</div>
+						<div class="svc-name">Tuesday</div>
+					</div>
+					<div class="service friday">
+						<div class="svc-time">Last Fri • Overnight</div>
+						<div class="svc-name">Monthly Vigil</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="panel list-panel">
+			<div class="list-header">
+				<h2 style="margin:0">Activities</h2>
+				<button id="add-activity-btn" class="primary">+ Add Activity</button>
+			</div>
+			<div class="toolbar">
+				<input id="search" placeholder="Search activities" />
+				<select id="filter">
+					<option value="all">All</option>
+					<option value="upcoming">Upcoming</option>
+					<option value="completed">Completed</option>
+				</select>
+				<button id="export">Export</button>
+				<input id="import-file" type="file" accept="application/json" />
+			</div>
+
+		</section>
+	</main>
+
+	<!-- Profile Modal (very compact) -->
+	<div id="profile-modal" class="profile-modal">
+		<div class="profile-card-small">
+			<button id="close-profile" class="close-profile">✕</button>
+			<img src="person.png" alt="Prophet Micheal Narh" class="profile-image-small" onerror="if(!this._tried){this._tried=true;this.src='assets/person.png'}">
+			<h2 class="profile-name-small">Prophet Micheal Narh</h2>
+			<p class="profile-role-small">Founder & Lead Pastor</p>
+					<div class="profile-location-small">
+						<strong>📞 +233 544 017 120</strong><br>
+						🇬🇭 Greater Accra, Achimota Mile 7 (Abotre Junction)
+					</div>
+		</div>
+	</div>
+
+	<footer class="site-footer">Built for Christ Fire Healing Ministry — Manage activities locally</footer>
+
+	<script src="app.js" defer></script>
+</body>
+</html>

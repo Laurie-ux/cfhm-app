@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#1e88e5"/>
+      <stop offset="1" stop-color="#1976d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="18" ry="18" fill="#fff" stroke="#e6eefb"/>
+  <circle cx="100" cy="80" r="36" fill="url(#g)"/>
+  <path d="M96 60 L96 100" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M74 80 L118 80" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 66 C112 74 122 74 112 94 C104 108 92 96 106 86" fill="#ff8a00" stroke="#ff8a00"/>
+  <text x="100" y="165" text-anchor="middle" font-size="14" fill="#1e3a8a" font-family="Segoe UI,Arial">Christ Fire</text>
+  <text x="100" y="181" text-anchor="middle" font-size="12" fill="#1e3a8a" font-family="Segoe UI,Arial">Healing Ministry</text>
+</svg>

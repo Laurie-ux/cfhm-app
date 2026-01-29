@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Christ Fire Healing Ministry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <header class="site-header">
+    <img src="logo.png" class="site-logo" alt="Christ Fire Healing Ministry logo" onerror="if(!this._tried){this._tried=true;this.src='assets/logo.png'}else{this.src='logo.svg'}">
+    <div class="site-title">
+      <h1>Christ Fire Healing Ministry</h1>
+      <p class="tag">Member Sign In</p>
+    </div>
+  </header>
+
+  <main class="container" style="max-width:720px;">
+    <section class="panel" style="margin:2rem auto;padding:1.25rem;">
+      <h2 id="auth-title">Sign In</h2>
+      <div class="auth-container" style="gap:1rem;">
+        <div class="auth-switch" role="tablist" aria-label="Auth mode">
+          <button id="mode-login" class="tab-btn active">Login</button>
+          <button id="mode-register" class="tab-btn">Register</button>
+        </div>
+
+        <form id="auth-form" style="display:flex;flex-direction:column;gap:.6rem">
+          <div id="register-fields" style="display:none">
+            <label>Full name
+              <input id="reg-name" placeholder="Full name" />
+            </label>
+            <label>Role
+              <input id="reg-role" placeholder="Role (pastor, volunteer)" />
+            </label>
+          </div>
+
+          <label>Phone number
+            <input id="auth-phone" inputmode="tel" pattern="[0-9+\- ()]{7,}" required placeholder="e.g. +233 24 123 4567" />
+          </label>
+
+          <label>Password
+            <input id="auth-password" type="password" required placeholder="At least 6 characters" />
+          </label>
+
+          <div id="register-extra" style="display:none">
+            <label>Confirm password
+              <input id="auth-password-confirm" type="password" placeholder="Confirm password" />
+            </label>
+          </div>
+
+          <div class="form-actions" style="align-items:center">
+            <button type="submit" class="primary" id="auth-submit">Sign In</button>
+          </div>
+        </form>
+
+        <div id="auth-msg" class="meta" style="margin-top:.6rem"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Login is stored locally in your browser for this demo app.</footer>
+
+  <script src="login.js" defer></script>
+</body>
+</html>
